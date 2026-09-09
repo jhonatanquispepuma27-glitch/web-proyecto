@@ -1,0 +1,231 @@
+*/*selecciona todo los elementos de la pagina*/{
+    margin:0;/*elimina margenes externos*/
+    padding:0;/*elimina espacios internos*/
+    box-sizing:border-box;/*hace que el ancho y el alto incluyan el pading y el borde*/
+    font-family:Arial, sans-serif;
+}
+
+
+header/*Es un etiqueta que se usa para encabezados de un sitio wed*/{
+    background:#1c1c1c;/*Es para colocar el fondo oscuro*/
+    padding:15px;/*Espacio interno */
+}
+
+nav/*Es un etiqueta que se usa para crear un menu de navegacion*/{
+    display: flex;/*coloca el menu de navegacion en fila*/
+    justify-content:space-between;/*Separa los elementos*/
+    align-items:center;/*lo centra verticalmente*/
+    
+}
+
+nav h2{
+    color:#dfddd7;
+}
+
+nav ul{
+    display: flex;
+    list-style:none;/*sirve para quitar estilos de una lista*/
+}
+
+nav ul li{
+  margin-left: 20px; /*sirve para agegar un espacio por la izquierda*/
+}
+
+nav ul li a{
+    color:rgb(242, 241, 233);
+    text-decoration:none;/*sirve para quitar decoraciones elimina el subrayado*/
+}
+
+#inicio{
+    text-align:center;/*centra el titulo parrafo y el boton de ver productos*/
+    padding:80px 20px;/*espacio interno arriba y abajo 80px izquierda y derecha 20px*/
+    background:linear-gradient(#000000,#dff72c);/*crea un degradado de colores */
+    color:rgb(6, 6, 6);
+}
+
+#inicio img{
+    width: 250px;/*afecta ala ancho del logo*/
+    border-radius: 60px;/*Redondea las esquinas del logo*/
+    
+}
+
+.catalogo{
+    display:inline-block;/*permite que el enlace se comparta como un boton*/
+    margin-top:20px;/*Agrega un espacio arriba del boton*/
+    padding:12px 25px;
+    background:#f3b60e;
+    color:black;
+    text-decoration:none;/*quita el subrayado del enlace*/
+    border-radius:10px;
+}
+
+#productos{
+    padding:30px;/*para que los productos no queden apegados*/
+    margin: 50px;/*separa los productos de la seccion anterior y la siguiente*/
+}
+
+#productos h2{
+    text-align:center;
+    margin-bottom:20px;/*agrega espacio debajo del titulo*/
+    font-size: 30px;
+    padding: 10px;
+}
+
+.contenedor-productos{
+    display: grid;/*comvierte el comtenedor en una cuadricula*/
+    grid-template-columns:repeat(2,1fr);/*sirve para crear dos columnas del mismo tamaño*/
+    gap: 30px;/*sirbe para dar espacio entre los productos*/
+    
+}
+
+.tragos{
+    background:white;
+    padding:15px;/*evita que la imagen el texto queden pegados*/
+    border-radius:15px;
+    text-align:center;
+    box-shadow: 0 5px 10px black;
+    transition:0.4s;/*que las animaciones duren 0.4 segundos*/
+}
+
+.tragos:hover{
+    transform:scale(1.05);/*cada ver que pasa el mouse la tarjeta se agranda ligeramente*/
+}
+
+.tragos img{
+    width:100%;
+    height:200px;
+    object-fit:cover;/*la imagen llene el espacio aunque tenga que recortar la imagen*/
+    border-radius:10px;
+}
+
+#ofertas h2{
+    background:#b9f35c;
+    color:rgb(4, 4, 4);
+    padding:20px;
+    text-align: center;
+    margin: 10px;
+    
+}
+
+.ofertas{
+    display:flex;/*coloca las ofertas una a lada de otra*/
+    gap:20px;/*en la separacion entre las imagenes*/
+    justify-content: center;/*centra todas las ofertas horizontalmente*/
+
+}
+.oferta img{
+    width: 150px;/*ancho de la imagen*/
+    height: 150px;/*alto de la imagen*/
+    border-radius: 10px;
+    margin: auto;/*centra la imagen*/
+    display: block;/* permite que el margin funcione correctamente*/
+
+}
+
+.oferta{
+    background:#d1a733;
+    color:black;
+    padding:20px;
+    border-radius:15px;
+    transition:0.4s;
+    margin: 10px;
+}
+
+.oferta:hover/*un activador que cuando pase el mouse */{
+    transform:rotate(3deg);/*cuando pase el puntero del mouse la tarjeta gire 3 grados*/
+}
+
+#Contacto table{
+    width: 50%;
+    border-collapse: collapse;/*une los bordes de las celdas para que se ves una linea*/
+    margin-top: 15px;/*deja el espacio arriba de la tabla*/
+    margin: auto;/*centra la tabla horizontalmente*/
+
+}
+#Contacto th,td{
+    border: 2px solid black;
+    text-align: center;
+    padding: 10px;/*espacio interno dentro de las celdas*/
+}
+#Contacto h3{
+    text-align: center;
+    padding: 10px;
+
+}
+    footer/*es para coocar el pie de la pagina*/{
+    background:#1c1c1c;
+    color:rgb(228, 225, 225);
+    text-align:center;
+    padding:15px;
+    border-collapse: collapse;
+}
+
+@media(max-width:768px){
+
+    .contenedor-productos{
+        grid-template-columns:2fr,1;/*hace que los productos ocupen una sola columna mas ancha*/
+        justify-content: center;
+    }
+
+    .ofertas{
+        grid-template-columns: 2fr;
+        
+    }
+
+    nav{
+        flex-direction:column;
+    }
+}
+@media(max-width:320px){
+    .contenedor-productos{
+        grid-template-columns:1fr;
+        justify-content: center;
+    }
+    nav h2{
+        font-size: 50px;
+        text-align: center;
+
+    }
+
+    .ofertas{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+   .barra{
+    flex-direction: column;
+    text-align: left;
+    padding: 10px;
+   }
+   .tragos{
+    width: 90%;
+    max-width: 250px;/*pero no sera mas ancho que 250px*/
+   }
+   .tragos img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+   }
+   #productos h2{
+    text-align: center;
+    padding: auto;
+   }
+   .tragos{
+    width: 250px;
+    height:250px;
+   }
+   .oferta h3,p{
+    text-align: center;
+   }
+   .oferta{
+    width:250px;
+    height: 250px;
+    margin: auto;
+   }
+   .oferta img{
+    height: 180px;
+    width: 180px;
+   }
+  
+}
